@@ -3,3 +3,4 @@ a.txt
 bin
 obj
 myapp.csproj
+.gitignore
