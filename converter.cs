@@ -4,68 +4,55 @@ namespace NumeralConverter
 {
     static class Converter
     {
-        public static void BinarytoDecimal(string number)
+        public static int BinarytoDecimal(int number)
         {
-            int result = 0 , y = 0;
+            int result = 0 , x = 0, aux;
 
-            for (int x = number.Length - 1; x == 0; x--)
+            while(number != 0)
             {
-                result += (int)number[x] * (int)Math.Pow(y, 2);
-                y++;
+                aux = number % 10;
+                number /= 10;
+                result += aux * (int)Math.Pow(2, x);
+                x++;
             }
 
-            Console.WriteLine(number + " -> " + result);
+            return result;
         }
 
-        public static void DecimaltoBinary(string number)
+        public static int DecimaltoBinary(int number)
         {
-            /*
-            int aux, y = 0, result;
-            bool greaterThan = true;
-            //string binary;
-
-            aux = Int32.Parse(number);
-
-            //implementar métodos/recursão
-            while(greaterThan)
+            int aux, x = 1, result = 0;
+            
+            
+            while(number != 0)
             {
-                if(aux > Math.Pow(2,y))
-                {
-                    y++;
-                }
-                else if(aux == Math.Pow(2,y))
-                {
-                    result = (int)Math.Pow(10, y);
-                    greaterThan = false;
-                }
-                else if(aux < Math.Pow(2,y))
-                {
-                    aux = (int)Math.Pow(2,y) - aux;
-                    //binary = " ";
-                    y--;
-                }
+                aux = number % 2;
+                number /= 2;
+                result += aux * x;
+                x *= 10;
             }
-            */
+
+            return result;
         }
 
-        public static void HextoDecimal(string number)
+        public static int HextoDecimal(int number)
         {
-            
+            return -1;
         }
 
-        public static void DecimaltoHex(string number)
+        public static int DecimaltoHex(int number)
         {
-            
+            return -1;
         }
 
-        public static void BinarytoHex(string number)
+        public static int BinarytoHex(int number)
         {
-            
+            return -1; 
         }
 
-        public static void HextoBinary(string number)
+        public static int HextoBinary(int number)
         {
-            
+            return -1;
         }
     }
 }
