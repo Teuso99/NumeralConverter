@@ -6,8 +6,7 @@ namespace NumeralConverter
     {
         static void Main(string[] args)
         {
-            int option;
-            string number;
+            int option, number, result;
             
             Console.WriteLine("1- Binary to Decimal");
             Console.WriteLine("2- Decimal to Binary");
@@ -15,39 +14,45 @@ namespace NumeralConverter
             Console.WriteLine("4- Decimal to Hexadecimal");
             Console.WriteLine("5- Binary to Hexadecimal");
             Console.WriteLine("6- Hexadecimal to Binary");
-            option = Console.ReadLine();
+            option = Int32.Parse(Console.ReadLine());
 
             switch (option)
             {
                 case 1:
                     Console.WriteLine("Number: ");
-                    number = Console.ReadLine();
-                    Converter.BinarytoDecimal(number);
+                    number = Int32.Parse(Console.ReadLine());
+                    result = Converter.BinarytoDecimal(number);
+                    Console.WriteLine(number + " -> " + result);
                     break;
                 case 2:
                     Console.WriteLine("Number: ");
-                    number = Console.ReadLine();
-                    Converter.DecimaltoBinary(number);
+                    number = Int32.Parse(Console.ReadLine());
+                    result = Converter.DecimaltoBinary(number);
+                    Console.WriteLine(number + " -> " + result);
                     break;
                 case 3:
                     Console.WriteLine("Number: ");
-                    number = Console.ReadLine();
-                    Converter.HextoDecimal(number);
+                    number = Int32.Parse(Console.ReadLine());
+                    result = Converter.HextoDecimal(number);
+                    Console.WriteLine(number + " -> " + result);
                     break;
                 case 4:
                     Console.WriteLine("Number: ");
-                    number = Console.ReadLine();
-                    Converter.DecimaltoHex(number);
+                    number = Int32.Parse(Console.ReadLine());
+                    result = Converter.DecimaltoHex(number);
+                    Console.WriteLine(number + " -> " + result);
                     break;
                 case 5:
                     Console.WriteLine("Number: ");
-                    number = Console.ReadLine();
-                    Converter.BinarytoHex(number);
+                    number = Int32.Parse(Console.ReadLine());
+                    result = Converter.BinarytoHex(number);
+                    Console.WriteLine(number + " -> " + result);
                     break;
                 case 6:
                     Console.WriteLine("Number: ");
-                    number = Console.ReadLine();
-                    Converter.HextoBinary(number);
+                    number = Int32.Parse(Console.ReadLine());
+                    result = Converter.HextoBinary(number);
+                    Console.WriteLine(number + " -> " + result);
                     break;    
             }
 
