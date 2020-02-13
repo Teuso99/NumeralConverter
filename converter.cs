@@ -35,24 +35,39 @@ namespace NumeralConverter
             return result;
         }
 
-        public static int HextoDecimal(int number)
+        public static int HextoDecimal(string number)
         {
-            return -1;
+            int result = int.Parse(number, System.Globalization.NumberStyles.HexNumber);
+            
+            return result;
         }
 
-        public static int DecimaltoHex(int number)
+        public static string DecimaltoHex(int number)
         {
-            return -1;
+            string result = number.ToString("X");
+            
+            return result;
         }
 
-        public static int BinarytoHex(int number)
+        public static string BinarytoHex(int number)
         {
-            return -1; 
+            string result;
+            int aux;
+
+            aux = Converter.BinarytoDecimal(number);
+            result = Converter.DecimaltoHex(aux);
+
+            return result; 
         }
 
-        public static int HextoBinary(int number)
+        public static int HextoBinary(string number)
         {
-            return -1;
+            int result, aux;
+
+            aux = Converter.HextoDecimal(number);
+            result = Converter.DecimaltoBinary(aux);
+            
+            return result;
         }
     }
 }
